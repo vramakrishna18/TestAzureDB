@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model DBResultModel
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+    <p>@ViewBag.MyConnectionString</p>
+</div>
+
+<div>
+    <table>
+    @foreach(var dBInfo in Model.DBInfos)
+    {
+        <tr>
+            <td>@dBInfo.Name</td>
+            <td>@dBInfo.Collation_Name</td>
+        </tr>
+    }
+    </table>
+</div>
